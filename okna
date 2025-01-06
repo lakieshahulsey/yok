@@ -1,1 +1,1996 @@
-html.com
+<div class="container">
+                
+
+
+<!-- BEGIN PAGE BREADCRUMB -->
+<ul class="page-breadcrumb breadcrumb">
+    <li>
+        <a href="#">BÁO CÁO</a><i class="fa fa-circle"></i>
+    </li>
+        <li class="active">
+            Thống kê kinh doanh
+        </li>
+            <li class="active">
+            <i class="fa fa-cube"></i>Báo cáo tổng hợp
+        </li>
+</ul>
+<!-- END PAGE BREADCRUMB -->
+
+
+                
+
+<style>
+    .a {
+        height: 110px;
+        width: auto;
+    }
+
+    .act {
+        background-color: lightseagreen;
+    }
+
+    .float {
+        float: left;
+        min-width: 24%;
+        margin-left: 0px;
+    }
+
+    .boxboder {
+        padding: 5px;
+        border-radius: 7px;
+    }
+</style>
+<!-- BEGIN PAGE CONTENT INNER -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- Begin: life time stats -->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-basket font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">
+                        Tìm kiếm
+                    </span>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="portlet-body">
+                        <div class="row list-separated">
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="display:none">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Kiểu phân tích:</label>
+                                    <select class="form-control ng-pristine ng-valid ng-touched" id="slKieuPhanTich" onchange="if (!window.__cfRLUnblockHandlers) return false; LoadChart();">
+                                        <option value="TotalBet">Tổng cược</option>
+                                        <option value="TotalAward">Tổng thưởng</option>
+                                        <option value="TotalRefund">Tổng hoàn</option>
+                                        <option selected="selected" value="Revenue">Lợi nhuận</option>
+                                        <option value="TotalTransaction">Tổng giao dịch</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Từ ngày</label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control" id="datepickerFrom" name="datepickerFrom" placeholder="Từ ngày" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Đến ngày</label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control" id="datepickerTo" name="datepickerTo" placeholder="Đến ngày" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="display:none">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Thời gian:</label>
+                                    <select class="form-control select2" id="slThoiGian" onchange="if (!window.__cfRLUnblockHandlers) return false; LoadChart();">
+                                        <option value="ngay">Theo ngày</option>
+                                        <option selected="selected" value="phut">Theo phút</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Tổng hợp</label>
+                                    <div class="input-group date">
+                                        <div class="checker" id="uniform-chkTH"><span class="checked"><input type="checkbox" checked="checked" id="chkTH"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="clear:both"></div>
+                            <br>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Dịch vụ:</label>
+                                    <select class="form-control select2" multiple="multiple" data-placeholder="Chọn dịch vụ" id="slDichVu" onchange="if (!window.__cfRLUnblockHandlers) return false;  LoadChart();">
+                                        <option value="0">Tất cả</option>
+                                                <option value="9025">Cộng Tác Viên</option>
+                                                <option value="9024">Event Jackpot Poker</option>
+                                                <option value="9023">Event ĐL Giới Thiệu</option>
+                                                <option value="9022">Event Lên VIP</option>
+                                                <option value="9021">Event VIP7</option>
+                                                <option value="9020">Tán Lộc TX</option>
+                                                <option value="9019">Lì Xì Tết</option>
+                                                <option value="9018">Sự kiện Hoàn tiền</option>
+                                                <option value="9017">Sự kiện Rồng XX</option>
+                                                <option value="9016">Event Hũ TX</option>
+                                                <option value="9015">Event Đếm Sao</option>
+                                                <option value="9014">Event Đếm Bom</option>
+                                                <option value="9013">Event Điểm Danh</option>
+                                                <option value="9012">NV Hàng Ngày</option>
+                                                <option value="9011">NV Tân Thủ</option>
+                                                <option value="9010">Event Bài Đẹp</option>
+                                                <option value="9006">Sự kiện Hoàn Tiền</option>
+                                                <option value="9005">Event Top VipPoint</option>
+                                                <option value="9004">VipPoint</option>
+                                                <option value="9001">Sự kiện Rồng TX</option>
+                                                <option value="8003">Xử lý khiếu nại</option>
+                                                <option value="8001">Giao dịch DL - DL</option>
+                                                <option value="7001">Chuyển khoản</option>
+                                                <option value="6001">Phí CK</option>
+                                                <option value="5002">Bán cho DL</option>
+                                                <option value="4002">Nạp tiền từ DL</option>
+                                                <option value="3012">Bot FB</option>
+                                                <option value="3011">Bot RH</option>
+                                                <option value="3010">Bot BC</option>
+                                                <option value="3009">Bot XX</option>
+                                                <option value="3008">Bot TX</option>
+                                                <option value="3007">Bot Slot</option>
+                                                <option value="190">Đóng - Mở Băng</option>
+                                                <option value="135">Sâm Lốc</option>
+                                                <option value="133">Tiến lên miền Nam (Solo)</option>
+                                                <option value="117">Liêng</option>
+                                                <option value="113">Poker</option>
+                                                <option value="109">Mậu binh</option>
+                                                <option value="106">Trả thưởng User - Excel</option>
+                                                <option value="105">Giftcode</option>
+                                                <option value="103">Quỹ Giftcode Đại lý</option>
+                                                <option value="102">Quỹ thưởng Đại lý</option>
+                                                <option value="55">Rồng Hổ</option>
+                                                <option value="40">Bóng Đá</option>
+                                                <option value="32">Rừng Rậm</option>
+                                                <option value="31">Tour Slot</option>
+                                                <option value="30">Tour TX</option>
+                                                <option value="23">Gái Nhảy</option>
+                                                <option value="22">Ngọc Bảo</option>
+                                                <option value="15">Bắn cá</option>
+                                                <option value="13">Bầu Cua</option>
+                                                <option value="12">Xóc Xóc</option>
+                                                <option value="11">Xổ Số</option>
+                                                <option value="9">----</option>
+                                                <option value="8">Thiên 
+địa</option>
+                                                <option value="7">Tài Xiu</option>
+                                                <option value="6">Vua Thú</option>
+                                                <option value="5">Kim Cương</option>
+                                                <option value="4">MiniPoker</option>
+                                                <option value="1">Thám Hiểm</option>
+                                                <option value="0">All Game</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <div style="clear:both"></div>
+                            <br>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <a onclick="if (!window.__cfRLUnblockHandlers) return false; searchData()" class="btn btn-success" style="margin-top:26px;">Tìm kiếm</a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <a onclick="if (!window.__cfRLUnblockHandlers) return false; ExportExcel()" class="btn btn-warning" style="margin-top:26px;">Xuất Excel</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="box box-success">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">THỐNG KÊ TỔNG HỢP</h3>
+                        </div>
+                        <div class="row" style="margin-left: 0px;">
+                            <input id="Fromdate" type="hidden">
+                            <input id="Todate" type="hidden">
+                        </div>
+                        <div class="box-body" id="dvContent">
+                            <div id="contentChart"><div style="width:100%; min-height:40%;height: 40%;">
+    <div id="chartContainer" style="height: 370px; width: 100%;"><div class="canvasjs-chart-container" style="position: relative; text-align: left; cursor: auto; direction: ltr;"><canvas class="canvasjs-chart-canvas" width="601" height="332" style="width: 668px; height: 370px; position: absolute; user-select: none;"></canvas><canvas class="canvasjs-chart-canvas" width="601" height="332" style="width: 668px; height: 370px; position: absolute; -webkit-tap-highlight-color: transparent; user-select: none; cursor: default;"></canvas><div class="canvasjs-chart-toolbar" style="position: absolute; right: 1px; top: 1px; border: 1px solid transparent;"></div><div class="canvasjs-chart-tooltip" style="position: absolute; height: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 2px; z-index: 1000; pointer-events: none; display: none; border-radius: 0px; left: 338px; bottom: -239px; transition: left 0.1s ease-out, bottom 0.1s ease-out;"><div style="width: auto; height: auto; min-width: 50px; margin: 0px; padding: 5px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; font-weight: normal; font-style: normal; font-size: 14px; color: black; text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px; text-align: left; border: 1px solid rgb(79, 129, 188); background: rgba(255, 255, 255, 0.9); text-indent: 0px; white-space: nowrap; border-radius: 0px; user-select: none;">Jan 2025<br><span style="color:#4F81BC;">Hôm nay:</span>&nbsp;&nbsp;$0<br><span style="color:#C0504E;">Hôm qua:</span>&nbsp;&nbsp;$79,866,182</div></div><a class="canvasjs-chart-credit" title="JavaScript Charts" style="outline:none;margin:0px;position:absolute;right:2px;top:356px;color:dimgrey;text-decoration:none;font-size:11px;font-family: Calibri, Lucida Grande, Lucida Sans Unicode, Arial, sans-serif" tabindex="-1" target="_blank" href="https://canvasjs.com/">CanvasJS.com</a></div></div>
+</div>
+
+    <script>
+        jQuery(document).ready(function () {
+            bidingchart(); // init metronic core componets
+        });
+        function bidingchart() {
+            var DTN = new Date();
+            var dataline1 = [107485293,19033316,2743868,14533674,-5680589,35641525,-67861642,14437432,88714686,-85553542,-5813045,0,0,0,0,0,0,0,0,0,0,0,0,0];
+            var dataline2 = [45943480,-5634072,64135190,6567299,20625983,-8849060,-21669161,17501566,49183381,-44576526,25406889,-85366083,158502870,-1975295,-197941293,-85887180,26604299,79866182,-42969016,-251244594,-9694559,-60940986,-125232870,-158582005];
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Hôm nay"
+                },
+                axisY: {
+                    includeZero: false,
+                    prefix: "$"
+                },
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    fontSize: 13
+                },
+                data: [{
+                    type: "splineArea",
+                    showInLegend: true,
+                    name: "Hôm nay",
+                    yValueFormatString: "$#,##0",
+                    xValueFormatString: "MMM YYYY",
+                    dataPoints: [
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 00, 00), y: dataline1[0] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 01, 00), y: dataline1[1] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 02, 00), y: dataline1[2] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 03, 00), y: dataline1[3] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 04, 00), y: dataline1[4] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 05, 00), y: dataline1[5] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 06, 00), y: dataline1[6] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 07, 00), y: dataline1[7] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 08, 00), y: dataline1[8] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 09, 00), y: dataline1[9] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 10, 00), y: dataline1[10] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 11, 00), y: dataline1[11] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 12, 00), y: dataline1[12] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 13, 00), y: dataline1[13] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 14, 00), y: dataline1[14] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 15, 00), y: dataline1[15] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 16, 00), y: dataline1[16] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 17, 00), y: dataline1[17] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 18, 00), y: dataline1[18] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 19, 00), y: dataline1[19] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 20, 00), y: dataline1[20] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 21, 00), y: dataline1[21] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 22, 00), y: dataline1[22] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 23, 00), y: dataline1[23] }
+                    ]
+                },
+                {
+                    type: "splineArea",
+                    showInLegend: true,
+                    name: "Hôm qua",
+                    yValueFormatString: "$#,##0",
+                    dataPoints: [
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 00, 00), y: dataline2[0] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 01, 00), y: dataline2[1] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 02, 00), y: dataline2[2] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 03, 00), y: dataline2[3] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 04, 00), y: dataline2[4] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 05, 00), y: dataline2[5] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 06, 00), y: dataline2[6] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 07, 00), y: dataline2[7] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 08, 00), y: dataline2[8] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 09, 00), y: dataline2[9] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 10, 00), y: dataline2[10] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 11, 00), y: dataline2[11] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 12, 00), y: dataline2[12] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 13, 00), y: dataline2[13] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 14, 00), y: dataline2[14] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 15, 00), y: dataline2[15] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 16, 00), y: dataline2[16] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 17, 00), y: dataline2[17] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 18, 00), y: dataline2[18] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 19, 00), y: dataline2[19] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 20, 00), y: dataline2[20] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 21, 00), y: dataline2[21] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 22, 00), y: dataline2[22] },
+                        { x: new Date(DTN.getFullYear(), DTN.getMonth(), DTN.getDate(), 23, 00), y: dataline2[23] }
+                    ]
+                }]
+            });
+            chart.render();
+        }
+    </script>
+
+
+</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- Begin: life time stats -->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-basket font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">
+                        THỐNG KÊ DỮ LIỆU
+                    </span>
+                    <span class="caption-helper">Bảng chi tiết dữ liệu</span>
+                </div>
+
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <label>Tổng hợp theo</label>
+                <select class="form-control select2" id="slTHNgay" onchange="if (!window.__cfRLUnblockHandlers) return false; ViewSource()">
+                    <option value="0">Hôm Nay</option>
+                    <option value="1">1 ngày trước</option>
+                    <option value="2">2 ngày trước</option>
+                    <option value="3">3 ngày trước</option>
+                    <option value="4">4 ngày trước</option>
+                    <option value="5">5 ngày trước</option>
+                </select>
+            </div>
+            <div class="portlet-body">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs nav-tabs-lg">
+                        <li class="active">
+                            <a href="#tab_1" data-toggle="tab" aria-expanded="true">
+                                Báo Cáo Game
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_2" data-toggle="tab" aria-expanded="false">
+                                Báo Cáo Mua-Bán
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_3" data-toggle="tab" aria-expanded="false">
+                                Báo Cáo Bot
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet grey-cascade box">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-cogs"></i>Số liệu game
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped dataTable">
+                            <thead>
+                                <tr>
+                                    <th width="100" rowspan="2">Thời gian</th>
+                                    <th width="100" rowspan="2">Game</th>
+                                    <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">Tổng cược</th>
+                                    <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">Tổng hoàn</th>
+                                    <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">Tổng thưởng</th>
+                                    <th width="100" rowspan="2">Lợi nhuận gộp</th>
+                                    <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">Tổng TK chơi</th>
+                                    <th width="100" rowspan="2">Tổng GD</th>
+                                </tr>
+                                <tr>
+                                    <th>TW</th>
+                                    <th>JP</th>
+                                    <th>KR</th>
+                                    <th>RU</th>
+
+                                    <th>TW</th>
+                                    <th>JP</th>
+                                    <th>KR</th>
+                                    <th>RU</th>
+
+                                    <th>TW</th>
+                                    <th>JP</th>
+                                    <th>KR</th>
+                                    <th>RU</th>
+
+                                    <th>TW</th>
+                                    <th>JP</th>
+                                    <th style="border-right: 1px solid #e6e0e0;">KR</th>
+                                    <th style="border-right: 1px solid #e6e0e0;">RU</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Thám Hiểm</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">104,658,900</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">92,435,200 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">12,223,700</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 55 </span></td>
+                                                    <td rowspan="2">14,514</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>52,060,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>49,280,900</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,318,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>46,683,100</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>42,451,900</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,300,200</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>48</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>6</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>MiniPoker</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">175,965,700</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">156,972,466 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">18,993,234</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 115 </span></td>
+                                                    <td rowspan="2">108,706</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>111,634,800</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>41,059,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>23,271,900</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>98,961,045</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>34,920,521</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>23,090,900</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>100</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>8</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>7</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Kim Cương</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">391,129,500</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">366,694,615 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">24,434,885</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 102 </span></td>
+                                                    <td rowspan="2">47,728</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>349,819,500</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>29,500,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11,810,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>324,795,469</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>29,388,249</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>12,510,897</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>85</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>6</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Vua Thú</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">259,675,800</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">224,981,343 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">34,694,457</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 175 </span></td>
+                                                    <td rowspan="2">119,562</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>211,794,100</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>18,649,600</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>29,232,100</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>182,034,973</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>17,156,565</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>25,789,805</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>146</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>17</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>12</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Tài Xiu</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">20,025,950,607</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 2,537,022,514 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">17,286,582,738 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">202,345,355</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 896 </span></td>
+                                                    <td rowspan="2">28,441</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11,919,680,493</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>5,214,843,138</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>2,891,414,976</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>12,000</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,478,092,797</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>832,745,794</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>226,183,923</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>9,924,222,999</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>4,570,784,348</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>2,791,575,391</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>588</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>208</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>99</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Thiên 
+địa</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">29,255,864</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">26,831,163 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">2,424,701</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 20 </span></td>
+                                                    <td rowspan="2">1,580</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>19,983,148</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>8,633,188</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>639,528</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>18,234,055</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>8,096,345</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>500,763</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>12</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>5</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Xổ Số</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">55,646,099</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">53,252,500 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">2,393,599</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 36 </span></td>
+                                                    <td rowspan="2">135</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>40,648,009</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>14,243,424</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>700,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>54,666</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>53,252,500</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>30</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>4</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Xóc Xóc</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">1,659,246,000</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">1,625,578,740 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">33,667,260</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 209 </span></td>
+                                                    <td rowspan="2">34,753</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,303,155,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>230,703,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>125,388,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,261,052,760</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>249,988,740</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>114,537,240</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>151</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>33</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>25</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Bầu Cua</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">101,647,000</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">95,715,000 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">5,932,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 11 </span></td>
+                                                    <td rowspan="2">1,349</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>32,421,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>69,226,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>31,508,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>64,207,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>4</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>7</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Bắn cá</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">2,573,594</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 350,554 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">2,830,140 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-607,100</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 22 </span></td>
+                                                    <td rowspan="2">49</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>2,277,394</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>296,200</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>56,354</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>294,200</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>2,829,640</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>500</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>21</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Ngọc Bảo</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">1,033,826,800</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">972,085,756 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">61,741,044</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 241 </span></td>
+                                                    <td rowspan="2">136,924</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>821,316,600</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>164,201,600</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>48,308,600</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>758,407,935</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>149,570,087</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>64,107,734</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>178</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>46</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>17</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Gái Nhảy</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">473,698,600</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">478,599,519 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-4,900,919</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 76 </span></td>
+                                                    <td rowspan="2">35,761</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>386,846,100</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>81,195,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>5,657,500</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>392,029,140</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>79,184,800</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>7,385,579</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>59</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>10</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>7</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Tour TX</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">2,900,000</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">15,353,292 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-12,453,292</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 47 </span></td>
+                                                    <td rowspan="2">29</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,900,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>800,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>200,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>13,547,332</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>741,485</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,064,475</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>32</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>4</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Rồng Hổ</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">259,751,730</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">256,136,655 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">3,615,075</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 27 </span></td>
+                                                    <td rowspan="2">483</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>229,042,730</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>9,350,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>21,359,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>221,316,655</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11,700,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>23,120,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>23</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>3</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Event Xin Lộc</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">29,580,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-29,580,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 435 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>18,110,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>8,730,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>2,740,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>263</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>130</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>42</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Giftcode</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">71,664,348 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-71,664,348</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 319 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>45,327,721</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>14,892,207</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11,377,754</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>66,666</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>207</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>70</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>41</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Trả thưởng User - Excel</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">7,566,666 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-7,566,666</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 7 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,433,333</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,633,333</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>500,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>2</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>2</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Poker</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">2,401,482,253</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 2,198,064,606 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">200,350,804 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">3,066,843</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 90 </span></td>
+                                                    <td rowspan="2">4,695</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>917,250,856</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>900,154,123</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>584,077,274</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>801,921,648</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>840,703,977</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>555,438,981</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>129,293,051</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>45,030,011</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>26,027,742</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>54</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>19</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>17</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Tiến lên miền Nam (Solo)</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">10,860,000</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 9,595,000 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">1,203,750 </span></td>
+                                                    <td rowspan="2" style="color:green;font-weight: bold;">61,250</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 3 </span></td>
+                                                    <td rowspan="2">38</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>10,860,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>9,595,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,203,750</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>3</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Sâm Lốc</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">1,800,000</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 1,200,000 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">1,140,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-540,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 4 </span></td>
+                                                    <td rowspan="2">6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>900,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>300,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>600,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>600,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>300,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>300,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>570,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>285,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>285,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>2</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Phí CK</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">2,016,665 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-2,016,665</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 1 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>2,016,665</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Sự kiện Rồng TX</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">20,400,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-20,400,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 156 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>12,620,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>6,000,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,780,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>104</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>38</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>14</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>VipPoint</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">20,778,975 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-20,778,975</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 172 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>15,463,025</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,322,650</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,993,300</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>125</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>29</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>18</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Event Top VipPoint</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">1,933,332 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-1,933,332</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 5 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>666,666</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>933,333</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>333,333</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>2</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>2</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>NV Tân Thủ</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">700,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-700,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 7 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>600,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>100,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>6</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>NV Hàng Ngày</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">7,950,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-7,950,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 91 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>4,200,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,000,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>750,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>49</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>34</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>8</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Event Điểm Danh</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">307,200 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-307,200</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 42 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>294,200</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>13,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>41</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Event Hũ TX</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">51,333,746 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-51,333,746</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 67 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>36,884,137</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>11,153,655</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3,295,954</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>50</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>13</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>4</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Sự kiện Rồng XX</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">7,800,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-7,800,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 66 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>6,400,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,100,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>300,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>50</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>12</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>4</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Tán Lộc TX</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">750,000</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">760,000 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-10,000</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 23 </span></td>
+                                                    <td rowspan="2">3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>50,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>700,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>470,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>80,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>210,000</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>14</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>3</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>6</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Event Jackpot Poker</span>
+                                                    </td>
+                                                    <td colspan="4"><span style="color: blue; font-weight: bold;">0</span></td>
+                                                    <td colspan="4"><span style="color: darkgoldenrod; font-weight: bold;"> 0 </span></td>
+                                                    <td colspan="4"> <span style="color: purple; font-weight: bold;">2,647,154 </span></td>
+                                                    <td rowspan="2" style="color:red;font-weight: bold;">-2,647,154</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 24 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,051,728</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>1,273,971</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>321,455</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>0</span></td>
+
+                                                    <td style="text-align: left; font-size: 11px;"><span>12</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>9</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>3</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+
+                                                </tr>
+                                        <tr style="background-color: cornflowerblue; color: azure;">
+                                            <th width="100" rowspan="2">Tổng</th>
+                                            <th width="100" rowspan="2"></th>
+                                            <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">26,990,818,447</th>
+                                            <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">4,746,232,674</th>
+                                            <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">22,082,181,767</th>
+                                            <th width="100" rowspan="2">162,404,006</th>
+                                            <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">3,544</th>
+                                            <th width="100" rowspan="2">534,756</th>
+                                        </tr>
+                                        <tr style="background-color: cornflowerblue; color: azure;">
+                                            <th style="font-size: 11px;">16,411,639,730</th>
+                                            <th style="font-size: 11px;">6,763,612,973</th>
+                                            <th style="font-size: 11px;">3,815,499,078</th>
+                                            <th style="font-size: 11px;">66,666</th>
+
+                                            <th style="font-size: 11px;">2,290,265,799</th>
+                                            <th style="font-size: 11px;">1,673,749,771</th>
+                                            <th style="font-size: 11px;">782,217,104</th>
+                                            <th style="font-size: 11px;">0</th>
+
+                                            <th style="font-size: 11px;">13,607,479,879</th>
+                                            <th style="font-size: 11px;">5,293,530,200</th>
+                                            <th style="font-size: 11px;">3,181,105,022</th>
+                                            <th style="font-size: 11px;">66,666</th>
+
+                                            <th style="font-size: 11px;">2,461</th>
+                                            <th style="font-size: 11px;">723</th>
+                                            <th style="border-right: 1px solid #e6e0e0; font-size: 11px;">357</th>
+                                            <th style="border-right: 1px solid #e6e0e0; font-size: 11px;">3</th>
+                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="tab-pane" id="tab_2">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet grey-cascade box">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-cogs"></i>Số liệu Mua-Bán
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped dataTable">
+                            <thead>
+                                <tr>
+                                    <th width="100" rowspan="2">Thời gian</th>
+                                    <th width="100" rowspan="2">Game</th>
+                                    <th width="100" rowspan="2">Tổng cược</th>
+                                    <th width="100" rowspan="2">Tổng hoàn</th>
+                                    <th width="100" rowspan="2">Tổng thưởng</th>
+                                    <th width="100" rowspan="2">Lợi nhuận gộp</th>
+                                    <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">Tổng TK chơi</th>
+                                    <th width="100" rowspan="2">Tổng GD</th>
+                                </tr>
+                                <tr>
+                                    <th>Taiwan</th>
+                                    <th>Japan</th>
+                                    <th style="border-right: 1px solid #e6e0e0;">Korea</th>
+                                    <th style="border-right: 1px solid #e6e0e0;">Russia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Nạp tiền từ DL</span>
+                                                    </td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">1,759,190,240</td>
+                                                    <td rowspan="2">-1,759,190,240</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 247 </span></td>
+                                                    <td rowspan="2">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>173</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>46</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>28</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Bán cho DL</span>
+                                                    </td>
+                                                    <td rowspan="2">1,804,717,857</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">1,804,717,857</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 103 </span></td>
+                                                    <td rowspan="2">173</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>66</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>22</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>15</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Chuyển khoản</span>
+                                                    </td>
+                                                    <td rowspan="2">100,833,935</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">100,833,935</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 70 </span></td>
+                                                    <td rowspan="2">221</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>51</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>12</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>7</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2">2024/12/12</td>
+                                                    <td rowspan="2">
+                                                                <span>Giao dịch DL - DL</span>
+                                                    </td>
+                                                    <td rowspan="2">546,779,000</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td rowspan="2">546,779,000</td>
+                                                    <td rowspan="2">0</td>
+                                                    <td colspan="4"><span style="color: lightseagreen; font-weight: bold;"> 11 </span></td>
+                                                    <td rowspan="2">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left; font-size: 11px;"><span>6</span></td>
+                                                    <td style="text-align: left; font-size: 11px;"><span>5</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                    <td style="text-align: left; border-right: 1px solid #e6e0e0; font-size: 11px;"><span>0</span></td>
+                                                </tr>
+                                        <tr style="background-color: cornflowerblue; color: azure;">
+                                            <th width="100" rowspan="2">Tổng</th>
+                                            <th width="100" rowspan="2"></th>
+                                            <th width="100" rowspan="2">2,305,969,240</th>
+                                            <th width="100" rowspan="2">0</th>
+                                            <th width="100" rowspan="2">2,452,330,792</th>
+                                            <th width="100" rowspan="2">146,361,552</th>
+                                            <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">431</th>
+                                            <th width="100" rowspan="2">Tổng GD</th>
+                                        </tr>
+                                        <tr style="background-color: cornflowerblue; color: azure;">
+                                            <th>296</th>
+                                            <th>85</th>
+                                            <th style="border-right: 1px solid #e6e0e0;">50</th>
+                                            <th style="border-right: 1px solid #e6e0e0;">0</th>
+                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="tab-pane" id="tab_3">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet grey-cascade box">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-cogs"></i>Số liệu Bot
+                    </div>
+                    
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped dataTable">
+                            <thead>
+                                <tr>
+                                    <th width="100" rowspan="2">Thời gian</th>
+                                    <th width="100" rowspan="2">Game</th>
+                                    <th width="100" rowspan="2">Tổng cược</th>
+                                    <th width="100" rowspan="2">Tổng hoàn</th>
+                                    <th width="100" rowspan="2">Tổng thưởng</th>
+                                    <th width="100" rowspan="2">Lợi nhuận gộp</th>
+                                    <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">Tổng TK chơi</th>
+                                    <th width="100" rowspan="2">Tổng GD</th>
+                                </tr>
+                                <tr>
+                                    <th>Taiwan</th>
+                                    <th>Japan</th>
+                                    <th style="border-right: 1px solid #e6e0e0;">Korea</th>
+                                    <th style="border-right: 1px solid #e6e0e0;">Russia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                            <tr>
+                                                <td>2024/12/12</td>
+                                                <td>
+                                                            <span>Bot Slot</span>
+                                                </td>
+                                                <td>1,524,172,762</td>
+                                                <td>0</td>
+                                                <td>1,577,847,000</td>
+                                                <td>-53,674,238</td>
+                                                <td><span>50</span></td>
+                                                <td><span>74</span></td>
+                                                <td><span>84</span></td>
+                                                <td><span>0</span></td>
+                                                <td>751,713</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2024/12/12</td>
+                                                <td>
+                                                            <span>Bot TX</span>
+                                                </td>
+                                                <td>57,413,423,499</td>
+                                                <td>0</td>
+                                                <td>57,866,590,000</td>
+                                                <td>-453,166,501</td>
+                                                <td><span>245</span></td>
+                                                <td><span>88</span></td>
+                                                <td><span>106</span></td>
+                                                <td><span>0</span></td>
+                                                <td>48,427</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2024/12/12</td>
+                                                <td>
+                                                            <span>Bot XX</span>
+                                                </td>
+                                                <td>3,045,276,000</td>
+                                                <td>0</td>
+                                                <td>3,081,960,000</td>
+                                                <td>-36,684,000</td>
+                                                <td><span>75</span></td>
+                                                <td><span>30</span></td>
+                                                <td><span>30</span></td>
+                                                <td><span>0</span></td>
+                                                <td>101,154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2024/12/12</td>
+                                                <td>
+                                                            <span>Bot BC</span>
+                                                </td>
+                                                <td>221,260,000</td>
+                                                <td>0</td>
+                                                <td>245,145,000</td>
+                                                <td>-23,885,000</td>
+                                                <td><span>36</span></td>
+                                                <td><span>20</span></td>
+                                                <td><span>9</span></td>
+                                                <td><span>0</span></td>
+                                                <td>4,749</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2024/12/12</td>
+                                                <td>
+                                                            <span>Bot RH</span>
+                                                </td>
+                                                <td>334,610,000</td>
+                                                <td>0</td>
+                                                <td>353,270,000</td>
+                                                <td>-18,660,000</td>
+                                                <td><span>25</span></td>
+                                                <td><span>5</span></td>
+                                                <td><span>5</span></td>
+                                                <td><span>0</span></td>
+                                                <td>10,005</td>
+                                            </tr>
+                                    <tr style="background-color: cornflowerblue; color: azure;">
+                                        <th width="100" rowspan="2">Tổng</th>
+                                        <th width="100" rowspan="2"></th>
+                                        <th width="100" rowspan="2">63,124,812,000</th>
+                                        <th width="100" rowspan="2">0</th>
+                                        <th width="100" rowspan="2">62,538,742,261</th>
+                                        <th width="100" rowspan="2">-586,069,739</th>
+                                        <th width="100" colspan="4" style="border-bottom: 1px solid #e6e0e0;">882</th>
+                                        <th width="100" rowspan="2">Tổng GD</th>
+                                    </tr>
+                                    <tr style="background-color: cornflowerblue; color: azure;">
+                                        <th>431</th>
+                                        <th>217</th>
+                                        <th style="border-right: 1px solid #e6e0e0;">234</th>
+                                        <th style="border-right: 1px solid #e6e0e0;">0</th>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+    setTimeout(function () {
+        $(".dataTables_filter").css('display', 'none');
+        $('.dataTables_length').each(function () {
+            $(this).css('display', 'none');
+        });
+        $('.dataTables_length option[value="20"]').each(function () {
+            $(this).attr('selected', 'selected').trigger('change');
+        });
+    }, 100);
+    
+</script>
+</div>
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+    </div>
+</div>
+<!-- END PAGE CONTENT INNER -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        LoadChart();
+        setTimeout(function () { searchData(); ViewSource(); }, 300);
+        
+        //initChart1()
+    });
+    function getLastWeek(d) {
+        var today = new Date();
+        var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - d);
+        var lastWeekMonth = lastWeek.getMonth() + 1;
+        var lastWeekDay = lastWeek.getDate();
+        var lastWeekYear = lastWeek.getFullYear();
+
+        var lastWeekDisplay = lastWeekMonth + "/" + lastWeekDay + "/" + lastWeekYear;
+        var lastWeekDisplayPadded = ("00" + lastWeekMonth.toString()).slice(-2) + "/" + ("00" + lastWeekDay.toString()).slice(-2) + "/" + ("0000" + lastWeekYear.toString()).slice(-4);
+        return lastWeekDisplayPadded;
+    }
+    function ViewSource() {
+        var t = $("#slTHNgay").val();
+        var datenow = new Date();
+        var nDay = datenow.getDate();
+        if (nDay < 10) {
+            nDay = "0" + nDay;
+        }
+        var nMonth = datenow.getMonth() + 1;
+        if (nMonth < 10) {
+            nMonth = "0" + nMonth;
+        }
+        var nYear = datenow.getFullYear();
+        var fullDate = nMonth + "/" + nDay + "/" + nYear;
+
+        var idtab = $("div[class='tab-pane active']").attr('id');
+        console.log(idtab);
+        if (idtab == undefined) {
+            idtab = "tab_1"
+        }
+        console.log(idtab);
+
+        if (t == "0") {
+            $('#datepickerFrom').datepicker("setDate", fullDate);
+            $('#datepickerTo').datepicker("setDate", fullDate);
+            searchData();
+            LoadChart();
+            ActTab(idtab);
+        }
+        if (t == "1") {
+
+            $('#datepickerFrom').datepicker("setDate", "-1d");
+            $('#datepickerTo').datepicker("setDate", "-1d");
+            searchData();
+            LoadChart();
+            ActTab(idtab);
+        }
+        if (t == "2") {
+            $('#datepickerFrom').datepicker("setDate", "-2d");
+            $('#datepickerTo').datepicker("setDate", "-2d");
+            searchData();
+            LoadChart();
+            ActTab(idtab);
+        }
+        if (t == "3") {
+            $('#datepickerFrom').datepicker("setDate", "-3d");
+            $('#datepickerTo').datepicker("setDate", "-3d");
+            searchData();
+            LoadChart();
+            ActTab(idtab);
+        }
+        if (t == "4") {
+            $('#datepickerFrom').datepicker("setDate", "-4d");
+            $('#datepickerTo').datepicker("setDate", "-4d");
+            searchData();
+            LoadChart();
+            ActTab(idtab);
+        }
+        if (t == "5") {
+            $('#datepickerFrom').datepicker("setDate", "-5d");
+            $('#datepickerTo').datepicker("setDate", "-5d");
+            searchData();
+            LoadChart();
+            ActTab(idtab);
+        }
+    }
+    function ActTab(idtab) {
+        $("div[id^='tab']").each(function () {
+            if ($(this).attr('id') == idtab) {
+                $(this).addClass('active');
+                $("a[href='#" + $(this).attr('id')+"']").parent().addClass('active');
+            }
+            else {
+                $(this).removeClass('active');
+                $("a[href='#" + $(this).attr('id') + "']").parent().removeClass('active');
+            }
+        });
+    }
+    function LoadChart()
+    {
+        var strServiceID = "";
+        var serviceID = $('#slDichVu').val();
+        if (serviceID == null || serviceID == '') serviceID = 0;
+        else {
+            if (serviceID.length > 0) {
+                for (var i = 0; i < serviceID.length; i++) {
+                    if (i == serviceID.length - 1)
+                        strServiceID += serviceID[i];
+                    else
+                        strServiceID += serviceID[i] + ',';
+                }
+            }
+            serviceID = strServiceID;
+        }
+                        $.ajax({
+                            type: "GET",
+                            url: "/Report/NewStatistics_Char",
+                            data: {
+                                typeShow: $('#slKieuPhanTich').val(),
+                                time: $('#slThoiGian').val(),
+                                serviceID: serviceID
+                            },
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "html",
+                            success: function (data) {
+
+                                if (data != null) {
+                                    $('#contentChart').html(data);
+                                }
+                            },
+                            error: function () {
+                                bootbox.alert("Hệ thống bận, vui lòng quay lại sau!");
+                            }
+                        });
+    }
+
+    function ExportExcel() {
+        var strServiceID = "";
+        var slKieuPhanTich = $('#slKieuPhanTich').val();
+        var serviceID = $('#slDichVu').val();
+        var datepickerFrom = $('#datepickerFrom').val();
+        var datepickerTo = $('#datepickerTo').val();
+        var chkTH = $('#chkTH').is(":checked");
+
+        if (serviceID == null || serviceID == '') serviceID = 0;
+        else {
+            if (serviceID.length > 0) {
+                for (var i = 0; i < serviceID.length; i++) {
+                    if (i == serviceID.length - 1)
+                        strServiceID += serviceID[i];
+                    else
+                        strServiceID += serviceID[i] + ',';
+                }
+            }
+            serviceID = strServiceID;
+        }
+        var link = "/Report/Statistics_Excel" + "?serviceID=" + serviceID + "&startDate=" + datepickerFrom + "&endDate=" + datepickerTo + "&typeShow=" + slKieuPhanTich + "&chkTH=" + (chkTH == true ? "1" : "0") + "&time=" + $('#slThoiGian').val();
+        window.location.href = link;
+    }
+
+    function searchData()
+    {
+        ShowLoading();
+        var strServiceID = "";
+        var slKieuPhanTich = $('#slKieuPhanTich').val();
+        var serviceID = $('#slDichVu').val();
+         var datepickerFrom = $('#datepickerFrom').val();
+         var datepickerTo = $('#datepickerTo').val();
+        var chkTH = $('#chkTH').is(":checked");
+        var idtab = $("div[class='tab-pane active']").attr('id');
+        console.log(idtab);
+        if (idtab == undefined) {
+            idtab = "tab_1"
+        }
+        console.log(idtab);
+         if (serviceID == null || serviceID == '') serviceID = 0;
+         else {
+             if (serviceID.length > 0) {
+                 for (var i = 0; i < serviceID.length; i++) {
+                     if (i == serviceID.length - 1)
+                         strServiceID += serviceID[i];
+                     else
+                     strServiceID += serviceID[i] + ',';
+                 }
+             }
+             serviceID = strServiceID;
+         }
+            $.ajax({
+                type: "GET",
+                url: "/Report/NewStatistics_Part",
+                data: {
+                    serviceID: serviceID,
+                    startDate: datepickerFrom,
+                    endDate: datepickerTo,
+                    typeShow: slKieuPhanTich,
+                    chkTH: chkTH == true ? 1 : 0,
+                    time: $('#slThoiGian').val(),
+                },
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (data) {
+
+                    if (data != null) {
+                        $('.tab-content').html(data);
+                        //fomartDataTable();
+                        HideLoading();
+                        ActTab(idtab);
+                    }
+                },
+                error: function () {
+                    bootbox.alert("Hệ thống bận, vui lòng quay lại sau!");
+                }
+         });
+    }
+
+</script>
+
+            </div>
